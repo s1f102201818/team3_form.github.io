@@ -92,7 +92,7 @@
                 const yuusyoku = $('input[name="yuusyoku"]').val();
                 const undou  = $('input[name="undou"]').val();
                 const taijuu  = $('input[name="taijuu"]').val();
-                const q1 = $('input[name="q1"]').val();
+                const q1 = $('input[name="q1"]:checked').val();
                 const msg = `登録\n${tyousyoku}\n${tyuusyoku}\n${yuusyoku}\n${undou}\n${taijuu}\n${q1}`;
                 sendText(msg);
                 return false;
