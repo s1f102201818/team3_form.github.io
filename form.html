@@ -12,20 +12,26 @@
     <form class="w-75 mx-auto">
         <h5 class="mt-3">今日の記録</h5>
         <h6 class="mt-3">食事メニュー</h6>
-        <div>
-            <p class="mt-3">朝</p>
-            <div>
-                <input class="form-control w-50 mt-1" name="name" placeholder="" required>
-            </div>
-            <p class="mt-3">昼</p>
-            <div>
-                <input class="form-control w-100 mt-1" name="name" placeholder="" required>
-            </div>
-            <p class="mt-3">夜</p>
-            <div>
-                <input class="form-control w-100 mt-1" name="name" placeholder="" required>
-            </div>
-        </div>
+        <table>
+            <tr>
+                <p class="mt-3">朝</p>
+                <div>
+                    <input class="form-control w-50 mt-1" name="name" placeholder="" required>
+                </div>
+            </tr>
+            <tr>
+                <p class="mt-3">昼</p>
+                <div>
+                    <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+                </div>
+            </tr>
+            <tr>
+                <p class="mt-3">夜</p>
+                <div>
+                    <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+                </div>
+            </tr>
+        </table>
         <p class="mt-3">運動</p>
         <div>
             <input class="form-control w-100 mt-1" name="udetate" required>
@@ -37,9 +43,8 @@
         <p class="mt-3">モチベーション</p>
         <div>
             <input type="radio" name="q1" value="低い">低い
-            <input type="radio" name="q1" value="低い">普通
-            <input type="radio" name="q1" value="低い">高い
-            <input class="form-control w-100 mt-1" name="haikin" required>
+            <input type="radio" name="q1" value="普通">普通
+            <input type="radio" name="q1" value="高い">高い
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="完了">
     </form>
