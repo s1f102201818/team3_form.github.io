@@ -33,7 +33,7 @@
     <script>
         
         $(document).ready(function () {
-            const liffId = "**********-********";
+            const liffId = "2006486420-GBDV0MDJ";
             initializeLiff(liffId);
         })
 
@@ -58,6 +58,9 @@
             });
         }
         
+        const params = (new URL(document.location)).searchParams;
+        const key = params.get('key');
+
         $(function () {
             $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
