@@ -1,131 +1,42 @@
-<!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>設定</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-    <style>
-        /* カスタムスタイル */
-        .form-container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding-top: 40px;
-        }
-        .form-group label {
-            font-weight: bold;
-            font-size: 18px;
-            letter-spacing: 0.05em;
-        }
-        .form-control {
-            border-radius: 6px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .required-label {
-            display: inline-block;
-            background-color: red; /* 必須ラベルの色を赤に変更 */
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 6px;
-            margin-right: 8px;
-            font-size: 14px;
-        }
-        .btn-primary {
-            background-color: #5BC8AC;
-            border-color: #5BC8AC;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 0.05em;
-            padding: 12px 20px;
-            border-radius: 6px;
-            width: 100%;  /* ボタンの幅を100%にしてフォームフィールドと同じ幅に */
-        }
-        .btn-primary:hover {
-            background-color: #46A88B;
-            border-color: #46A88B;
-        }
-        /* ドロップダウンの見切れ対策 */
-        select.form-control {
-            height: 45px;  /* 高さを指定 */
-            padding: 10px; /* パディングを調整 */
-            font-size: 16px;  /* フォントサイズを調整 */
-        }
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            .form-container {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            .form-group label {
-                font-size: 16px;
-            }
-            .form-control {
-                font-size: 14px;
-            }
-            .btn-primary {
-                font-size: 16px;
-                padding: 10px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="form-container">
-        <form>
-            <div class="form-group">
-                <label>
-                    <span class="required-label">必須</span>名前
-                </label>
-                <input type="text" class="form-control" name="name" placeholder="名前を入力" required>
-            </div>
-            <div class="form-group">
-                <label>
-                    <span class="required-label">必須</span>予想体重
-                </label>
-                <select class="form-control" name="weight" required>
-                    <option value="" disabled selected>予想体重を選んでください</option>
-                    <option value="50">50kg以下</option>
-                    <option value="50">50kg</option>
-                    <option value="55">55kg</option>
-                    <option value="60">60kg</option>
-                    <option value="65">65kg</option>
-                    <option value="70">70kg</option>
-                    <option value="75">75kg</option>
-                    <option value="80">80kg</option>
-                    <option value="85">85kg</option>
-                    <option value="90">90kg</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>
-                    <span class="required-label">必須</span>期間
-                </label>
-                <select class="form-control" name="kikan" required>
-                    <option value="" disabled selected>期間を選んでください</option>
-                    <option value="1ヶ月">1ヶ月</option>
-                    <option value="2ヶ月">2ヶ月</option>
-                    <option value="3ヶ月">3ヶ月</option>
-                    <option value="6ヶ月">6ヶ月</option>
-                    <option value="12ヶ月">12ヶ月</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">完了</button>
-        </form>
-    </div>
+
+    <form class="w-75 mx-auto">
+        <p class="mt-3">名前</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+        </div>
+        <p class="mt-3">目標体重</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="weight" required>
+        </div>
+        <p class="mt-3">期間</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="kikan" required>
+        </div>
+        <input type="submit" class="mt-4 btn btn-primary" value="完了">
+    </form>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
+        
         $(document).ready(function () {
-            const liffId = "2006486420-GBDV0MDJ";  // ご自身のLIFF IDに変更してください
+            const liffId = "2006486420-GBDV0MDJ";
             initializeLiff(liffId);
-        });
-        // LIFFの初期化
+        })
+
         function initializeLiff(liffId) {
             liff.init({
                 liffId: liffId
@@ -135,32 +46,33 @@
                 console.log('LIFF Initialization failed ', err);
             });
         }
-        // メッセージ送信
+
         function sendText(text) {
             liff.sendMessages([{
                 'type': 'text',
                 'text': text
             }]).then(function () {
-                alert('設定が完了しました！');  // ユーザーに通知
-                liff.closeWindow();  // LIFFウィンドウを閉じる
+                liff.closeWindow();
             }).catch(function (error) {
-                window.alert('メッセージ送信に失敗しました: ' + error);
+                window.alert('Failed to send message ' + error);
             });
         }
-        // URLパラメータからkeyの値を取得
+        
         const params = (new URL(document.location)).searchParams;
         const key = params.get('key');
-        // フォーム送信時の動作
+
         $(function () {
-            $('form').submit(function (event) {
-                event.preventDefault();  // デフォルトのフォーム送信を防ぐ
+            $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
-                const weight  = $('select[name="weight"]').val();
-                const kikan   = $('select[name="kikan"]').val();
-                const msg = `設定\n名前: ${name}\n予想体重: ${weight}kg\n期間: ${kikan}`;
+                const weight = $('input[name="weight"]').val();
+                const kikan  = $('input[name="kikan"]').val();
+                const msg = `設定\n${name}\n${weight}\n${kikan}`;
                 sendText(msg);
+                return false;
             });
         });
+
     </script>
+
 </body>
 </html>
