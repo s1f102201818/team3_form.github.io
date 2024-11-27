@@ -1,26 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>設定</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
 
     <form class="w-75 mx-auto">
+        <h5 class="mt-3">設定</h5>
         <p class="mt-3">名前</p>
         <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+            <input type="text" class="form-control w-100 mt-1" name="name" placeholder="名前を入力してください" required>
         </div>
-        <p class="mt-3">目標体重</p>
+        <p class="mt-3">目標体重 (kg)</p>
         <div>
-            <input class="form-control w-100 mt-1" name="weight" required>
+            <input type="number" class="form-control w-100 mt-1" name="weight" placeholder="例: 65" required>
         </div>
         <p class="mt-3">期間</p>
         <div>
-            <input class="form-control w-100 mt-1" name="kikan" required>
+            <input type="number" class="form-control w-100 mt-1" name="kikan" placeholder="例: 3ヶ月" required>
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="完了">
     </form>
@@ -66,7 +68,7 @@
                 const name    = $('input[name="name"]').val();
                 const weight = $('input[name="weight"]').val();
                 const kikan  = $('input[name="kikan"]').val();
-                const msg = `設定\n${name}\n${weight}\n${kikan}`;
+                const msg = `設定\n名前: ${name}\n目標体重: ${weight}kg\n期間: ${kikan}`;
                 sendText(msg);
                 return false;
             });
